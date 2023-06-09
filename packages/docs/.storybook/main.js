@@ -13,5 +13,11 @@ const config = {
   docs: {
     autodocs: "tag",
   },
+  viteFinal: (config, { configType }) => {
+    if (configType === 'PRODUCTION') {
+      config.base = 'jasmim-ds'
+    }
+    return config
+  }
 };
 export default config;
