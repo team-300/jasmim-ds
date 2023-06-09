@@ -6,12 +6,12 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "storybook build && tsup src/index.tsx --format esm,cjs --dts --external react",
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
     "dev": "storybook dev -p 6006 && tsup src/index.tsx --format esm,cjs --dts --external react --watch ",
     "lint": "eslint src/**/*.ts* --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook build && storybook-to-ghpages"
   },
   "devDependencies": {
     "@jasmim-ds/eslint-config": "*",
