@@ -15,7 +15,7 @@ const config = {
   },
   viteFinal: (config, { configType }) => {
     if (configType === 'PRODUCTION') {
-      config.base = 'jasmim-ds'
+      config.base = '/jasmim-ds/'
     }
     return config
   }
