@@ -1,8 +1,13 @@
-import * as react_jsx_runtime from 'react/jsx-runtime';
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 
-type ButtonProps = {
-    size: 'sm';
-};
-declare const Button: () => react_jsx_runtime.JSX.Element;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLElement> {
+    size: 'lg' | 'md' | 'sm' | 'tn';
+    variation?: 'primary' | 'secondary' | 'tertiary';
+    leftIcon?: ReactNode;
+    rightIcon?: ReactNode;
+    fullSize?: boolean;
+    isLoading?: boolean;
+}
+declare const Button: React.FC<ButtonProps>;
 
-export { Button, ButtonProps };
+export { Button };
