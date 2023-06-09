@@ -84,7 +84,7 @@ var Button = (_a) => {
           "h-10 px-4": size === "sm",
           "h-8 px-3": size === "tn",
           "w-full": fullSize,
-          "bg-brand-pure test hover:bg-brand-medium-1 focus:bg-brand-medium-2": variation === "primary",
+          "bg-brand-pure test test2 hover:bg-brand-medium-1 focus:bg-brand-medium-2": variation === "primary",
           "border-[1.3px] border-transparent-dark-3 hover:bg-transparent-dark-1 focus:bg-transparent-dark-2": variation === "secondary",
           "text-brand-medium-2 hover:text-brand-dark focus:text-brand-pure disabled:text-gray-7": variation === "tertiary",
           "disabled:!opacity-100": variation === "primary" && isLoading
