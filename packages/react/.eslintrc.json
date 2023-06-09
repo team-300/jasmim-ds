@@ -1,3 +1,6 @@
 {
-  "extends": "@jasmim-ds/eslint-config"
+  "extends": [
+    "@jasmim-ds/eslint-config",
+    "plugin:storybook/recommended"
+  ]
 }

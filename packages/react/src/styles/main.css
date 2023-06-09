@@ -1,39 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer utilities {
-  /* .clip-checkbox {
-    mask-repeat: no-repeat;
-    mask-size: 11px;
-    mask-position: center;
-    mask-image: url('/clip-checkbox.svg');
-  } */
-
-  input[type='number']::-webkit-inner-spin-button,
-  input[type='number']::-webkit-outer-spin-button {
-    @apply appearance-none;
-  }
-}
-
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    @apply font-work-sans;
-  }
-}
-
-@media (max-width: 1023px) {
-  html {
-    font-size: 93.75%;
-  }
-}
-
-@media (max-width: 639px) {
-  html {
-    font-size: 87.5%;
-  }
-}

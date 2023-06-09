@@ -1,5 +1,5 @@
 import tailwindcssAnimate from 'tailwindcss-animate'
-// import { colors } from '@jasmim-ds/tokens'
+import { colors } from '@jasmim-ds/tokens'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -197,7 +197,7 @@ export default {
         ],
       },
     },
-    // colors,
+    colors,
   },
   plugins: [tailwindcssAnimate],
 }

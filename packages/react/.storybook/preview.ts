@@ -1,9 +1,8 @@
-/** @type { import('@storybook/react').Preview } */
+import type { Preview } from "@storybook/react";
 
-import "tailwindcss/tailwind.css";
-import { themes } from '@storybook/theming'
+import '../src/styles/main.css'
 
-const preview = {
+const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
@@ -11,9 +10,6 @@ const preview = {
         color: /(background|color)$/i,
         date: /Date$/,
       },
-    },
-    docs: {
-      theme: themes.dark
     },
   },
 };
