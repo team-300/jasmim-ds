@@ -1,4 +1,5 @@
 declare const colors: {
+    test: string;
     white: string;
     black: string;
     'brand-pure': string;

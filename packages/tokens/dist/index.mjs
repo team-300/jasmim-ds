@@ -1,5 +1,6 @@
 // src/colors.ts
 var colors = {
+  test: "#FFFFFF",
   white: "#FFFFFF",
   black: "#0C0E0F",
   "brand-pure": "#07D567",
