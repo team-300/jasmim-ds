@@ -1,5 +1,11 @@
 # @jasmim-ds/react
 
+## 2.0.2
+
+### Patch Changes
+
+- c4ef01f: Outro teste
+
 ## 2.0.1
 
 ### Patch Changes
