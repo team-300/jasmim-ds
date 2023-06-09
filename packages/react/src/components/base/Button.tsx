@@ -30,7 +30,7 @@ export const Button: React.FC<ButtonProps> = ({
           'h-10 px-4': size === 'sm',
           'h-8 px-3': size === 'tn',
           'w-full': fullSize,
-          'bg-brand-pure teste hover:bg-brand-medium-1 focus:bg-brand-medium-2':
+          'bg-brand-pure teste emerson hover:bg-brand-medium-1 focus:bg-brand-medium-2':
             variation === 'primary',
           'border-[1.3px] border-transparent-dark-3 hover:bg-transparent-dark-1 focus:bg-transparent-dark-2':
             variation === 'secondary',
