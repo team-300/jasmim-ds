@@ -1,5 +1,11 @@
 # @jasmim-ds/react
 
+## 2.0.4
+
+### Patch Changes
+
+- 860b1ca: Cadastrando alguns componentes
+
 ## 2.0.3
 
 ### Patch Changes
