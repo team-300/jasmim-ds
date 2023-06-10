@@ -4,4 +4,4 @@
 "@jasmim-ds/react": patch
 ---
 
-updating
+Updating
