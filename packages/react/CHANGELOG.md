@@ -1,5 +1,11 @@
 # @jasmim-ds/react
 
+## 2.0.3
+
+### Patch Changes
+
+- d6cfc3d: updating version
+
 ## 2.0.2
 
 ### Patch Changes
