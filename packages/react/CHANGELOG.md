@@ -1,5 +1,11 @@
 # @jasmim-ds/react
 
+## 2.0.5
+
+### Patch Changes
+
+- 47ddda2: Updating
+
 ## 2.0.4
 
 ### Patch Changes

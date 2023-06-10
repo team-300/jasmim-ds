@@ -1,5 +1,11 @@
 # @jasmim-ds/tokens
 
+## 1.1.2
+
+### Patch Changes
+
+- 47ddda2: Updating
+
 ## 1.1.1
 
 ### Patch Changes
