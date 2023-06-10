@@ -1,12 +1,14 @@
-import React, { ButtonHTMLAttributes, ReactNode } from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 
 import { clsx } from 'clsx'
+import { Icon } from './Icon'
+import { Loading } from './Loading'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLElement> {
-  size: 'lg' | 'md' | 'sm' | 'tn'
+  size: 'lg' | 'md' | 'sm'
   variation?: 'primary' | 'secondary' | 'tertiary'
-  leftIcon?: ReactNode
-  rightIcon?: ReactNode
+  leftIcon?: string
+  rightIcon?: string
   fullSize?: boolean
   isLoading?: boolean
 }
@@ -21,6 +23,17 @@ export const Button: React.FC<ButtonProps> = ({
   isLoading = false,
   ...rest
 }) => {
+  const iconSizes = {
+    lg: 28,
+    md: 24,
+    sm: 16,
+  }
+
+  const loadingSizes = {
+    lg: 'w-7 h-7',
+    md: 'w-6 h-6',
+    sm: 'w-4 h-4',
+  }
   return (
     <button
       className={clsx(
@@ -28,9 +41,8 @@ export const Button: React.FC<ButtonProps> = ({
           'h-14 px-7': size === 'lg',
           'h-12 px-5': size === 'md',
           'h-10 px-4': size === 'sm',
-          'h-8 px-3': size === 'tn',
           'w-full': fullSize,
-          'bg-brand-pure bla hover:bg-brand-medium-1 focus:bg-brand-medium-2':
+          'bg-brand-pure hover:bg-brand-medium-1 focus:bg-brand-medium-2':
             variation === 'primary',
           'border-[1.3px] border-transparent-dark-3 hover:bg-transparent-dark-1 focus:bg-transparent-dark-2':
             variation === 'secondary',
@@ -43,19 +55,19 @@ export const Button: React.FC<ButtonProps> = ({
       disabled={isLoading}
       {...rest}
     >
-      {leftIcon && leftIcon}
+      {leftIcon && <Icon icon={leftIcon} size={iconSizes[size]} />}
 
-      {/* {isLoading && (
+      {isLoading && (
         <Loading
-          className="w-7"
+          className={loadingSizes[size]}
           spinColor={variation === 'primary' ? 'black' : 'green'}
           elipseColor={variation === 'primary' ? 'success' : 'gray'}
         />
-      )} */}
+      )}
 
       {children && <p>{children}</p>}
 
-      {rightIcon && rightIcon}
+      {rightIcon && <Icon icon={rightIcon} size={iconSizes[size]} />}
     </button>
   )
 }

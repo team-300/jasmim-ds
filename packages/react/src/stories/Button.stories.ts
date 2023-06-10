@@ -12,14 +12,17 @@ export default {
   argTypes: {
     variation: {
       options: ['primary', 'secondary', 'tertiary'],
-      control: 'inline-radio',
+      control: { type: 'inline-radio' },
     },
     fullSize: {
       control: 'boolean',
     },
+    isLoading: {
+      control: 'boolean',
+    },
     size: {
-      options: ['tn', 'sm', 'md', 'lg'],
-      control: { type: 'select' },
+      options: ['sm', 'md', 'lg'],
+      control: { type: 'inline-radio' },
     },
   },
 } as Meta<typeof Button>
@@ -29,6 +32,7 @@ export const Primary: StoryObj<typeof Button> = {
     variation: 'primary',
     size: 'md',
     fullSize: false,
+    isLoading: false,
   },
 }
 export const Secondary: StoryObj<typeof Button> = {
@@ -36,6 +40,7 @@ export const Secondary: StoryObj<typeof Button> = {
     variation: 'secondary',
     size: 'md',
     fullSize: false,
+    isLoading: false,
   },
 }
 export const Tertiary: StoryObj<typeof Button> = {
@@ -43,5 +48,25 @@ export const Tertiary: StoryObj<typeof Button> = {
     variation: 'tertiary',
     size: 'md',
     fullSize: false,
+    isLoading: false,
+  },
+}
+export const PrimaryWithLeftIcon: StoryObj<typeof Button> = {
+  args: {
+    variation: 'primary',
+    size: 'md',
+    fullSize: false,
+    isLoading: false,
+    leftIcon: 'settings',
+  },
+}
+
+export const PrimaryWithRightIcon: StoryObj<typeof Button> = {
+  args: {
+    variation: 'primary',
+    size: 'md',
+    fullSize: false,
+    isLoading: false,
+    rightIcon: 'settings',
   },
 }
