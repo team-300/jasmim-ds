@@ -1,5 +1,6 @@
 export { AvatarProfile } from './AvatarProfile'
 export { Button } from './Button'
 export { Icon } from './Icon'
+export { IconButton } from './IconButton'
 export { NavButton } from './NavButton'
 export { Loading } from './Loading'
