@@ -1,0 +1,7 @@
+---
+"@jasmim-ds/ts-config": patch
+"@jasmim-ds/tokens": patch
+"@jasmim-ds/react": patch
+---
+
+Cadastrando alguns componentes
