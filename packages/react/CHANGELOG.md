@@ -1,5 +1,11 @@
 # @jasmim-ds/react
 
+## 2.0.6
+
+### Patch Changes
+
+- d5481fb: Inserção Componente StepperBar
+
 ## 2.0.5
 
 ### Patch Changes

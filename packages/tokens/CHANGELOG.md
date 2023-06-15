@@ -1,5 +1,11 @@
 # @jasmim-ds/tokens
 
+## 1.1.3
+
+### Patch Changes
+
+- d5481fb: Inserção Componente StepperBar
+
 ## 1.1.2
 
 ### Patch Changes
