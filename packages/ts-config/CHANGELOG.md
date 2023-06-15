@@ -1,5 +1,11 @@
 # @jasmim-ds/ts-config
 
+## 1.0.3
+
+### Patch Changes
+
+- d5481fb: Inserção Componente StepperBar
+
 ## 1.0.2
 
 ### Patch Changes
