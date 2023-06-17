@@ -1,5 +1,11 @@
 # @jasmim-ds/react
 
+## 2.0.7
+
+### Patch Changes
+
+- f93978a: change button font weight
+
 ## 2.0.6
 
 ### Patch Changes
