@@ -29,13 +29,6 @@ interface IconButtonProps extends ButtonHTMLAttributes<HTMLElement> {
 }
 declare const IconButton: React.FC<IconButtonProps>;
 
-interface NavButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    application?: 'on-white' | 'on-dark';
-    kind?: 'back-single' | 'back-full' | 'back-arrow' | 'close';
-    size?: 'md' | 'sm';
-}
-declare const NavButton: React.FC<NavButtonProps>;
-
 interface LoadingProps {
     className?: string;
     spinColor?: 'black' | 'green';
@@ -43,4 +36,20 @@ interface LoadingProps {
 }
 declare const Loading: React.FC<LoadingProps>;
 
-export { AvatarProfile, Button, Icon, IconButton, Loading, NavButton };
+interface NavButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    application?: 'on-white' | 'on-dark';
+    kind?: 'back-single' | 'back-full' | 'back-arrow' | 'close';
+    size?: 'md' | 'sm';
+}
+declare const NavButton: React.FC<NavButtonProps>;
+
+interface Step {
+    title: string;
+}
+interface StepperBarProps {
+    steps: Step[];
+    currentStep?: number;
+}
+declare const StepperBar: React.FC<StepperBarProps>;
+
+export { AvatarProfile, Button, Icon, IconButton, Loading, NavButton, StepperBar };

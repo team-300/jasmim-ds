@@ -64,7 +64,8 @@ __export(src_exports, {
   Icon: () => Icon,
   IconButton: () => IconButton,
   Loading: () => Loading,
-  NavButton: () => NavButton
+  NavButton: () => NavButton,
+  StepperBar: () => StepperBar
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -4382,12 +4383,12 @@ var Button = (_a) => {
           "h-12 px-5": size === "md",
           "h-10 px-4": size === "sm",
           "w-full": fullSize,
-          "bg-brand-pure hover:bg-brand-medium-1 focus:bg-brand-medium-2": variation === "primary",
-          "border-[1.3px] border-transparent-dark-3 hover:bg-transparent-dark-1 focus:bg-transparent-dark-2": variation === "secondary",
-          "text-brand-medium-2 hover:text-brand-dark focus:text-brand-pure disabled:text-gray-7": variation === "tertiary",
+          "bg-brand-pure hover:bg-brand-medium-1 focus:bg-brand-medium-2 text-body-1-semibold": variation === "primary",
+          "border-[1.3px] border-transparent-dark-3 hover:bg-transparent-dark-1 focus:bg-transparent-dark-2 text-body-2-medium": variation === "secondary",
+          "text-brand-medium-2 hover:text-brand-dark focus:text-brand-pure disabled:text-gray-7 text-body-2-medium": variation === "tertiary",
           "disabled:!opacity-100": variation === "primary" && isLoading
         },
-        `flex items-center justify-center gap-2 rounded-md font-semibold transition-all duration-200 disabled:opacity-[0.4]`
+        `flex items-center justify-center gap-2 rounded-md transition-all duration-200 disabled:opacity-[0.4]`
       ),
       disabled: isLoading
     }, rest), {
@@ -4580,6 +4581,61 @@ var NavButton = (_a) => {
     })
   );
 };
+
+// src/components/base/StepperBar.tsx
+var import_react = require("react");
+var import_clsx5 = __toESM(require("clsx"));
+var import_jsx_runtime7 = require("react/jsx-runtime");
+var StepperBar = ({
+  steps,
+  currentStep = 1
+}) => {
+  const [currentStepBar, setCurrentStepBar] = (0, import_react.useState)(currentStep);
+  return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("ul", { className: "flex items-center gap-3", children: steps.map((step, index) => /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(
+    "li",
+    {
+      className: (0, import_clsx5.default)("flex cursor-pointer items-center gap-3", {
+        "text-brand-medium-2": currentStepBar > index + 1
+      }),
+      onClick: () => setCurrentStepBar(index + 1),
+      children: [
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+          "span",
+          {
+            className: (0, import_clsx5.default)(
+              "flex h-6 w-6 items-center justify-center rounded-full border border-gray-5 font-work-sans text-body-2-semibold text-gray-5",
+              {
+                "border-none bg-brand-pure": currentStepBar > index + 1,
+                "border !border-brand-medium-2 !text-brand-medium-2": currentStepBar === index + 1
+              }
+            ),
+            children: currentStepBar > index + 1 ? /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Icon, { icon: "check", className: "text-white", size: 24 }) : index + 1
+          }
+        ),
+        /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+          "span",
+          {
+            className: (0, import_clsx5.default)("font-work-sans text-body-2-medium text-gray-5", {
+              "!text-brand-medium-2": currentStepBar >= index + 1
+            }),
+            children: step.title
+          }
+        ),
+        index < steps.length - 1 && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+          Icon,
+          {
+            icon: "chev-r",
+            className: (0, import_clsx5.default)("text-gray-5", {
+              "!text-brand-medium-2": currentStepBar > index + 1
+            }),
+            size: 16
+          }
+        )
+      ]
+    },
+    index + 1
+  )) });
+};
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   AvatarProfile,
@@ -4587,5 +4643,6 @@ var NavButton = (_a) => {
   Icon,
   IconButton,
   Loading,
-  NavButton
+  NavButton,
+  StepperBar
 });

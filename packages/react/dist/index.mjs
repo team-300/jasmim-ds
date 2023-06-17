@@ -4344,12 +4344,12 @@ var Button = (_a) => {
           "h-12 px-5": size === "md",
           "h-10 px-4": size === "sm",
           "w-full": fullSize,
-          "bg-brand-pure hover:bg-brand-medium-1 focus:bg-brand-medium-2": variation === "primary",
-          "border-[1.3px] border-transparent-dark-3 hover:bg-transparent-dark-1 focus:bg-transparent-dark-2": variation === "secondary",
-          "text-brand-medium-2 hover:text-brand-dark focus:text-brand-pure disabled:text-gray-7": variation === "tertiary",
+          "bg-brand-pure hover:bg-brand-medium-1 focus:bg-brand-medium-2 text-body-1-semibold": variation === "primary",
+          "border-[1.3px] border-transparent-dark-3 hover:bg-transparent-dark-1 focus:bg-transparent-dark-2 text-body-2-medium": variation === "secondary",
+          "text-brand-medium-2 hover:text-brand-dark focus:text-brand-pure disabled:text-gray-7 text-body-2-medium": variation === "tertiary",
           "disabled:!opacity-100": variation === "primary" && isLoading
         },
-        `flex items-center justify-center gap-2 rounded-md font-semibold transition-all duration-200 disabled:opacity-[0.4]`
+        `flex items-center justify-center gap-2 rounded-md transition-all duration-200 disabled:opacity-[0.4]`
       ),
       disabled: isLoading
     }, rest), {
@@ -4542,11 +4542,67 @@ var NavButton = (_a) => {
     })
   );
 };
+
+// src/components/base/StepperBar.tsx
+import { useState } from "react";
+import clsx5 from "clsx";
+import { jsx as jsx7, jsxs as jsxs4 } from "react/jsx-runtime";
+var StepperBar = ({
+  steps,
+  currentStep = 1
+}) => {
+  const [currentStepBar, setCurrentStepBar] = useState(currentStep);
+  return /* @__PURE__ */ jsx7("ul", { className: "flex items-center gap-3", children: steps.map((step, index) => /* @__PURE__ */ jsxs4(
+    "li",
+    {
+      className: clsx5("flex cursor-pointer items-center gap-3", {
+        "text-brand-medium-2": currentStepBar > index + 1
+      }),
+      onClick: () => setCurrentStepBar(index + 1),
+      children: [
+        /* @__PURE__ */ jsx7(
+          "span",
+          {
+            className: clsx5(
+              "flex h-6 w-6 items-center justify-center rounded-full border border-gray-5 font-work-sans text-body-2-semibold text-gray-5",
+              {
+                "border-none bg-brand-pure": currentStepBar > index + 1,
+                "border !border-brand-medium-2 !text-brand-medium-2": currentStepBar === index + 1
+              }
+            ),
+            children: currentStepBar > index + 1 ? /* @__PURE__ */ jsx7(Icon, { icon: "check", className: "text-white", size: 24 }) : index + 1
+          }
+        ),
+        /* @__PURE__ */ jsx7(
+          "span",
+          {
+            className: clsx5("font-work-sans text-body-2-medium text-gray-5", {
+              "!text-brand-medium-2": currentStepBar >= index + 1
+            }),
+            children: step.title
+          }
+        ),
+        index < steps.length - 1 && /* @__PURE__ */ jsx7(
+          Icon,
+          {
+            icon: "chev-r",
+            className: clsx5("text-gray-5", {
+              "!text-brand-medium-2": currentStepBar > index + 1
+            }),
+            size: 16
+          }
+        )
+      ]
+    },
+    index + 1
+  )) });
+};
 export {
   AvatarProfile,
   Button,
   Icon,
   IconButton,
   Loading,
-  NavButton
+  NavButton,
+  StepperBar
 };

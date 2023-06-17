@@ -42,15 +42,15 @@ export const Button: React.FC<ButtonProps> = ({
           'h-12 px-5': size === 'md',
           'h-10 px-4': size === 'sm',
           'w-full': fullSize,
-          'bg-brand-pure hover:bg-brand-medium-1 focus:bg-brand-medium-2':
+          'bg-brand-pure hover:bg-brand-medium-1 focus:bg-brand-medium-2 text-body-1-semibold':
             variation === 'primary',
-          'border-[1.3px] border-transparent-dark-3 hover:bg-transparent-dark-1 focus:bg-transparent-dark-2':
+          'border-[1.3px] border-transparent-dark-3 hover:bg-transparent-dark-1 focus:bg-transparent-dark-2 text-body-2-medium':
             variation === 'secondary',
-          'text-brand-medium-2 hover:text-brand-dark focus:text-brand-pure disabled:text-gray-7':
+          'text-brand-medium-2 hover:text-brand-dark focus:text-brand-pure disabled:text-gray-7 text-body-2-medium':
             variation === 'tertiary',
           'disabled:!opacity-100': variation === 'primary' && isLoading,
         },
-        `flex items-center justify-center gap-2 rounded-md font-semibold transition-all duration-200 disabled:opacity-[0.4]`,
+        `flex items-center justify-center gap-2 rounded-md transition-all duration-200 disabled:opacity-[0.4]`,
       )}
       disabled={isLoading}
       {...rest}
