@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'work-sans': ['Work Sans', 'sans-serif'],
-        'nunito-sans': ['Nunito Sans', 'sans-serif'],
+        'work-sans': ['var(--work_sans-font)', 'sans-serif'],
+        'nunito-sans': ['var(--nunito_sans-font)', 'sans-serif'],
       },
       fontSize: fontSizes,
     },
