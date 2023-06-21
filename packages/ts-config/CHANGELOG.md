@@ -1,5 +1,11 @@
 # @jasmim-ds/ts-config
 
+## 1.0.5
+
+### Patch Changes
+
+- 6c6a2d4: Updating icon design system
+
 ## 1.0.4
 
 ### Patch Changes
