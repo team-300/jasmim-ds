@@ -1,8 +1,9 @@
 import React, { ButtonHTMLAttributes } from 'react'
 
 import clsx from 'clsx'
-
 import { Icon } from './Icon'
+
+// import { IconBase } from './Icon'
 
 export interface NavButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -48,39 +49,37 @@ export const NavButton: React.FC<NavButtonProps> = ({
     >
       {kind === 'back-full' && (
         <>
-          <Icon
-            icon="arrow-r"
-            className="rotate-180 text-gray-5 transition-all duration-300 group-hover:text-gray-6"
-            size={20}
-          />
+          <Icon className="icon-arrow-r rotate-180 text-gray-5 transition-all duration-300 group-hover:text-gray-6 text-[20px]" />
           Voltar
         </>
       )}
 
       {kind === 'back-arrow' && (
         <Icon
-          icon="arrow-r"
-          size={size === 'md' ? 28 : 22.4}
-          className={clsx('rotate-180', {
+          className={clsx('rotate-180 icon-arrow-r', {
             'text-gray-5': application === 'on-white',
             'text-gray-6': application === 'on-dark',
+            'text-[28px]': size === 'md',
+            'text-[22.4px]': size === 'sm',
           })}
         />
       )}
 
       {kind === 'back-single' && (
         <Icon
-          icon="chev-l"
-          className="text-gray-5"
-          size={size === 'md' ? 28 : 22.4}
+          className={clsx('icon-chev-l text-gray-5', {
+            'text-[28px]': size === 'md',
+            'text-[22.4px]': size === 'sm',
+          })}
         />
       )}
 
       {kind === 'close' && (
         <Icon
-          icon="close-md"
-          className="text-gray-5"
-          size={size === 'md' ? 28 : 22.4}
+          className={clsx('icon-close-md text-gray-5', {
+            'text-[28px]': size === 'md',
+            'text-[22.4px]': size === 'sm',
+          })}
         />
       )}
     </button>

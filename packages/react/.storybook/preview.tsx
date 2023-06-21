@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/react";
 
 import '../src/styles/main.css'
+import '../src/styles/icomoon.css'
 import { themes } from '@storybook/theming'
 
 

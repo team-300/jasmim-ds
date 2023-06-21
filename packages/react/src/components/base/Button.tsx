@@ -1,8 +1,8 @@
 import React, { ButtonHTMLAttributes } from 'react'
 
 import { clsx } from 'clsx'
-import { Icon } from './Icon'
 import { Loading } from './Loading'
+import { Icon } from './Icon'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLElement> {
   size: 'lg' | 'md' | 'sm'
@@ -24,9 +24,9 @@ export const Button: React.FC<ButtonProps> = ({
   ...rest
 }) => {
   const iconSizes = {
-    lg: 28,
-    md: 24,
-    sm: 16,
+    lg: 'text-[28px]',
+    md: 'text-[24px]',
+    sm: 'text-[16px]',
   }
 
   const loadingSizes = {
@@ -55,7 +55,7 @@ export const Button: React.FC<ButtonProps> = ({
       disabled={isLoading}
       {...rest}
     >
-      {leftIcon && <Icon icon={leftIcon} size={iconSizes[size]} />}
+      {leftIcon && <Icon className={`icon-${leftIcon} ${iconSizes[size]}`} />}
 
       {isLoading && (
         <Loading
@@ -67,7 +67,7 @@ export const Button: React.FC<ButtonProps> = ({
 
       {children && <p>{children}</p>}
 
-      {rightIcon && <Icon icon={rightIcon} size={iconSizes[size]} />}
+      {rightIcon && <Icon className={`icon-${rightIcon} ${iconSizes[size]}`} />}
     </button>
   )
 }
