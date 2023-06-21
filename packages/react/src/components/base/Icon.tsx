@@ -1,10 +1,11 @@
 import React from 'react'
-import IcoMoon, { IconProps } from 'react-icomoon'
-import '../../styles/main.css'
 
-import { icons } from '@jasmim-ds/tokens'
+export interface IconProps extends React.HTMLAttributes<HTMLElement> {
+  className?: string
+}
 
-// TODO: Fazer a tipagem dos nomes dos ícones disponíveis para utilização
-export const Icon: React.FC<IconProps> = (props) => (
-  <IcoMoon iconSet={icons} {...props} />
-)
+export const Icon: React.FC<IconProps> = ({ className, ...rest }) => {
+  return <i className={className} {...rest} />
+}
+
+Icon.displayName = 'Icon'
