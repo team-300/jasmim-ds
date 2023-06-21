@@ -4,4 +4,4 @@
 "@jasmim-ds/react": patch
 ---
 
-Component ToggleSwitch e Input
+Updating icon design system

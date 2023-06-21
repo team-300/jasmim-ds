@@ -1,5 +1,11 @@
 # @jasmim-ds/ts-config
 
+## 1.0.4
+
+### Patch Changes
+
+- bb02504: Component ToggleSwitch e Input
+
 ## 1.0.3
 
 ### Patch Changes

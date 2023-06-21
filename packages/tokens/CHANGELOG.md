@@ -1,5 +1,11 @@
 # @jasmim-ds/tokens
 
+## 1.1.4
+
+### Patch Changes
+
+- bb02504: Component ToggleSwitch e Input
+
 ## 1.1.3
 
 ### Patch Changes

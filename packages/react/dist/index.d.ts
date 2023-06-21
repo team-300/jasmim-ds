@@ -1,5 +1,4 @@
 import React, { ButtonHTMLAttributes } from 'react';
-import { IconProps } from 'react-icomoon';
 
 interface AvatarProfileProps {
     size?: 'sm' | 'lg';
@@ -18,6 +17,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLElement> {
 }
 declare const Button: React.FC<ButtonProps>;
 
+interface IconProps extends React.HTMLAttributes<HTMLElement> {
+    className?: string;
+}
 declare const Icon: React.FC<IconProps>;
 
 interface IconButtonProps extends ButtonHTMLAttributes<HTMLElement> {
@@ -52,4 +54,12 @@ interface StepperBarProps {
 }
 declare const StepperBar: React.FC<StepperBarProps>;
 
-export { AvatarProfile, Button, Icon, IconButton, Loading, NavButton, StepperBar };
+interface ToggleSwitchProps {
+    label: string;
+    labelDir?: 'left' | 'right';
+    description?: string;
+    disabled?: boolean;
+}
+declare const ToggleSwitch: React.FC<ToggleSwitchProps>;
+
+export { AvatarProfile, Button, Icon, IconButton, Loading, NavButton, StepperBar, ToggleSwitch };

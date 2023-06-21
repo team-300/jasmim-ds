@@ -1,8 +1,7 @@
 import React, { ButtonHTMLAttributes } from 'react'
 
 import { clsx } from 'clsx'
-
-import { Icon } from '.'
+import { Icon } from './Icon'
 
 export interface IconButtonProps extends ButtonHTMLAttributes<HTMLElement> {
   size: 'lg' | 'md' | 'sm'
@@ -27,9 +26,9 @@ export const IconButton: React.FC<IconButtonProps> = ({
   }
 
   const iconSizes = {
-    lg: 40,
-    md: 32,
-    sm: 22,
+    lg: 'text-[40px]',
+    md: 'text-[32px]',
+    sm: 'text-[22px]',
   }
 
   const variations = {
@@ -90,9 +89,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
       {...rest}
     >
       <Icon
-        icon={icon}
-        size={iconSizes[size]}
-        className={variations.iconColor[variation][mode]}
+        className={`${icon} ${variations.iconColor[variation][mode]} ${iconSizes[size]}`}
       />
     </button>
   )

@@ -39,7 +39,7 @@ export const StepperBar: React.FC<StepperBarProps> = ({
             )}
           >
             {currentStepBar > index + 1 ? (
-              <Icon icon="check" className="text-white" size={24} />
+              <Icon className="icon-check text-white text-[24px]" />
             ) : (
               index + 1
             )}
@@ -54,11 +54,9 @@ export const StepperBar: React.FC<StepperBarProps> = ({
 
           {index < steps.length - 1 && (
             <Icon
-              icon="chev-r"
-              className={clsx('text-gray-5', {
+              className={clsx('icon-chev-r text-gray-5 text-[16px]', {
                 '!text-brand-medium-2': currentStepBar > index + 1,
               })}
-              size={16}
             />
           )}
         </li>

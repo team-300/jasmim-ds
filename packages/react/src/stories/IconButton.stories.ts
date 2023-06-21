@@ -28,7 +28,7 @@ export default {
 
 export const Primary: StoryObj<typeof IconButton> = {
   args: {
-    icon: 'settings',
+    icon: 'icon-settings',
     variation: 'primary',
     appearance: 'circle',
     size: 'md',
@@ -38,7 +38,7 @@ export const Primary: StoryObj<typeof IconButton> = {
 
 export const Secondary: StoryObj<typeof IconButton> = {
   args: {
-    icon: 'settings',
+    icon: 'icon-settings',
     variation: 'secondary',
     appearance: 'circle',
     size: 'md',
@@ -48,7 +48,7 @@ export const Secondary: StoryObj<typeof IconButton> = {
 
 export const Tertiary: StoryObj<typeof IconButton> = {
   args: {
-    icon: 'settings',
+    icon: 'icon-settings',
     variation: 'tertiary',
     appearance: 'circle',
     size: 'md',
@@ -57,7 +57,7 @@ export const Tertiary: StoryObj<typeof IconButton> = {
 }
 export const Quaternary: StoryObj<typeof IconButton> = {
   args: {
-    icon: 'settings',
+    icon: 'icon-settings',
     variation: 'quaternary',
     appearance: 'circle',
     size: 'md',
