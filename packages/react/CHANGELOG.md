@@ -1,5 +1,11 @@
 # @jasmim-ds/react
 
+## 2.0.9
+
+### Patch Changes
+
+- 6c6a2d4: Updating icon design system
+
 ## 2.0.8
 
 ### Patch Changes
