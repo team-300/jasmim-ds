@@ -1,5 +1,13 @@
 import React, { ButtonHTMLAttributes } from 'react';
 
+interface AtentionButtonProps extends ButtonHTMLAttributes<HTMLElement> {
+    variation?: 'primary' | 'secondary';
+    icon?: string;
+    title: string;
+    fullSize?: boolean;
+}
+declare const AtentionButton: React.FC<AtentionButtonProps>;
+
 interface AvatarProfileProps {
     size?: 'sm' | 'lg';
     avatarUrl?: string;
@@ -62,4 +70,4 @@ interface ToggleSwitchProps {
 }
 declare const ToggleSwitch: React.FC<ToggleSwitchProps>;
 
-export { AvatarProfile, Button, Icon, IconButton, Loading, NavButton, StepperBar, ToggleSwitch };
+export { AtentionButton, AvatarProfile, Button, Icon, IconButton, Loading, NavButton, StepperBar, ToggleSwitch };
