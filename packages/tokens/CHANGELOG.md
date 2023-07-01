@@ -1,5 +1,11 @@
 # @jasmim-ds/tokens
 
+## 1.1.6
+
+### Patch Changes
+
+- 0711205: New components
+
 ## 1.1.5
 
 ### Patch Changes

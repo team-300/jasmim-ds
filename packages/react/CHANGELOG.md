@@ -1,5 +1,11 @@
 # @jasmim-ds/react
 
+## 2.0.10
+
+### Patch Changes
+
+- 0711205: New components
+
 ## 2.0.9
 
 ### Patch Changes

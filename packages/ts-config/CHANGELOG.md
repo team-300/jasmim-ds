@@ -1,5 +1,11 @@
 # @jasmim-ds/ts-config
 
+## 1.0.6
+
+### Patch Changes
+
+- 0711205: New components
+
 ## 1.0.5
 
 ### Patch Changes
