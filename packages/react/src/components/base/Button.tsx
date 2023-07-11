@@ -6,7 +6,14 @@ import { Icon } from './Icon'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLElement> {
   size: 'lg' | 'md' | 'sm'
-  variation?: 'primary' | 'secondary' | 'tertiary'
+  application?: 'on-white' | 'on-dark'
+  variation?:
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'quaternary'
+    | 'quintinary'
+    | 'danger'
   leftIcon?: string
   rightIcon?: string
   fullSize?: boolean
@@ -20,6 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
   rightIcon,
   fullSize,
   variation = 'primary',
+  application = 'on-white',
   isLoading = false,
   ...rest
 }) => {
@@ -38,16 +46,32 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       className={clsx(
         {
-          'h-14 px-7': size === 'lg',
-          'h-12 px-5': size === 'md',
-          'h-10 px-4': size === 'sm',
+          'h-14 px-7 text-body-1-semibold': size === 'lg',
+          'h-11 px-5 text-body-2-medium': size === 'md',
+          'h-[34px] px-3 text-body-3-medium': size === 'sm',
           'w-full': fullSize,
-          'bg-brand-pure hover:bg-brand-medium-1 focus:bg-brand-medium-2 text-body-1-semibold':
-            variation === 'primary',
-          'border-[1.3px] border-transparent-dark-3 hover:bg-transparent-dark-1 focus:bg-transparent-dark-2 text-body-2-medium':
-            variation === 'secondary',
-          'text-brand-medium-2 hover:text-brand-dark focus:text-brand-pure disabled:text-gray-7 text-body-2-medium':
-            variation === 'tertiary',
+
+          'bg-brand-medium-1 text-black hover:bg-brand-pure focus:bg-brand-medium-2 disabled:bg-brand-pure':
+            variation === 'primary' && application === 'on-white',
+          'bg-white text-gray-8 hover:bg-gray-3 focus:bg-gray-5 disabled:bg-gray-3':
+            variation === 'primary' && application === 'on-dark',
+
+          'border-[1.3px] border-transparent-dark-3 hover:bg-transparent-dark-1 focus:bg-transparent-dark-2 disabled:bg-transparent-dark-1':
+            variation === 'secondary' && application === 'on-white',
+          'border-[1.3px] text-white border-transparent-light-3 hover:bg-transparent-light-1/[0.08] focus:bg-transparent-light-2/[0.14] disabled:bg-transparent-light-1/[0.08]':
+            variation === 'secondary' && application === 'on-dark',
+
+          '!px-0 text-brand-medium-2 hover:text-brand-dark focus:text-brand-pure disabled:text-gray-7':
+            variation === 'tertiary' && application === 'on-white',
+          '!px-0 text-white hover:text-gray-4 focus:text-gray-5 disabled:text-gray-4':
+            variation === 'tertiary' && application === 'on-dark',
+
+          '!px-0 text-gray-7 hover:text-gray-8 focus:text-black disabled:text-gray-7':
+            variation === 'quaternary',
+          'bg-gray-8 text-white hover:bg-gray-7 focus:bg-black disabled:bg-gray-8':
+            variation === 'quintinary',
+          'border-[1.3px] border-danger-pure text-danger-pure hover:text-danger-medium-2 hover:border-danger-medium-2 focus:bg-danger-light focus:border-danger-dark focus:text-danger-dark disabled:text-danger-dark':
+            variation === 'danger',
           'disabled:!opacity-100': variation === 'primary' && isLoading,
         },
         `flex items-center justify-center gap-2 rounded-md transition-all duration-200 disabled:opacity-[0.4]`,

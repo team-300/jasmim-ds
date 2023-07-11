@@ -10,8 +10,19 @@ export default {
     size: 'md',
   },
   argTypes: {
+    application: {
+      options: ['on-white', 'on-dark'],
+      control: { type: 'inline-radio' },
+    },
     variation: {
-      options: ['primary', 'secondary', 'tertiary'],
+      options: [
+        'primary',
+        'secondary',
+        'tertiary',
+        'quaternary',
+        'quintinary',
+        'danger',
+      ],
       control: { type: 'inline-radio' },
     },
     fullSize: {
@@ -29,6 +40,7 @@ export default {
 
 export const Primary: StoryObj<typeof Button> = {
   args: {
+    application: 'on-white',
     variation: 'primary',
     size: 'md',
     fullSize: false,
@@ -37,6 +49,7 @@ export const Primary: StoryObj<typeof Button> = {
 }
 export const Secondary: StoryObj<typeof Button> = {
   args: {
+    application: 'on-white',
     variation: 'secondary',
     size: 'md',
     fullSize: false,
@@ -45,6 +58,7 @@ export const Secondary: StoryObj<typeof Button> = {
 }
 export const Tertiary: StoryObj<typeof Button> = {
   args: {
+    application: 'on-white',
     variation: 'tertiary',
     size: 'md',
     fullSize: false,
@@ -53,6 +67,7 @@ export const Tertiary: StoryObj<typeof Button> = {
 }
 export const PrimaryWithLeftIcon: StoryObj<typeof Button> = {
   args: {
+    application: 'on-white',
     variation: 'primary',
     size: 'md',
     fullSize: false,
@@ -63,6 +78,7 @@ export const PrimaryWithLeftIcon: StoryObj<typeof Button> = {
 
 export const PrimaryWithRightIcon: StoryObj<typeof Button> = {
   args: {
+    application: 'on-white',
     variation: 'primary',
     size: 'md',
     fullSize: false,

@@ -5,7 +5,7 @@ import '../src/styles/icomoon.css'
 import { themes } from '@storybook/theming'
 
 
-const preview: Preview = {
+const preview: Preview = {  
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
@@ -17,6 +17,11 @@ const preview: Preview = {
     docs: {
       theme: themes.dark
     },
+    darkMode: {
+      current: 'light',
+      dark: { ...themes.dark },
+      light: { ...themes.normal }
+    }
   },
 };
 
