@@ -328,9 +328,52 @@ var Button = (_a) => {
 };
 Button.displayName = "Button";
 
+// src/components/base/Chip.tsx
+import clsx4 from "clsx";
+import { jsx as jsx6, jsxs as jsxs5 } from "react/jsx-runtime";
+var Chip = (_a) => {
+  var _b = _a, {
+    application = "on-white",
+    size = "md",
+    isSelected = false,
+    isClosable = false,
+    title
+  } = _b, rest = __objRest(_b, [
+    "application",
+    "size",
+    "isSelected",
+    "isClosable",
+    "title"
+  ]);
+  return /* @__PURE__ */ jsxs5(
+    "button",
+    __spreadProps(__spreadValues({
+      className: clsx4(
+        "flex cursor-pointer items-center justify-center gap-[6px] rounded-full",
+        {
+          "border-[1.3px] border-transparent-dark-3 text-gray-8": application === "on-white",
+          "border-[1.3px] border-transparent-light-3 text-white": application === "on-dark",
+          "hover:bg-transparent-dark-1": !isSelected && application === "on-white",
+          "hover:bg-transparent-light-3": !isSelected && application === "on-dark",
+          "border-[1.5px] !border-brand-medium-2 bg-brand-light-1 !text-body-2-medium text-brand-medium-2": isSelected && application === "on-white",
+          "bg-white !text-body-2-medium !text-gray-8": isSelected && application === "on-dark",
+          "h-8 px-4 text-body-3-regular": size === "sm",
+          "h-11 px-[18px] text-body-2-regular": size === "md",
+          "!pr-3": isClosable && isSelected
+        }
+      )
+    }, rest), {
+      children: [
+        title,
+        isClosable && isSelected && /* @__PURE__ */ jsx6(Icon, { className: "icon-close-sm text-[24px]" })
+      ]
+    })
+  );
+};
+
 // src/components/base/IconButton.tsx
-import { clsx as clsx4 } from "clsx";
-import { jsx as jsx6 } from "react/jsx-runtime";
+import { clsx as clsx5 } from "clsx";
+import { jsx as jsx7 } from "react/jsx-runtime";
 var IconButton = (_a) => {
   var _b = _a, {
     size,
@@ -396,10 +439,10 @@ var IconButton = (_a) => {
       }
     }
   };
-  return /* @__PURE__ */ jsx6(
+  return /* @__PURE__ */ jsx7(
     "button",
     __spreadProps(__spreadValues({
-      className: clsx4(
+      className: clsx5(
         "flex items-center justify-center transition-all duration-200 disabled:opacity-[0.4]",
         // Appearance
         appearance === "square" && size !== "sm" && "rounded-lg",
@@ -411,7 +454,7 @@ var IconButton = (_a) => {
         variations.background[variation][mode]
       )
     }, rest), {
-      children: /* @__PURE__ */ jsx6(
+      children: /* @__PURE__ */ jsx7(
         Icon,
         {
           className: `${icon} ${variations.iconColor[variation][mode]} ${iconSizes[size]}`
@@ -423,8 +466,8 @@ var IconButton = (_a) => {
 IconButton.displayName = "IconButton";
 
 // src/components/base/NavButton.tsx
-import clsx5 from "clsx";
-import { Fragment, jsx as jsx7, jsxs as jsxs5 } from "react/jsx-runtime";
+import clsx6 from "clsx";
+import { Fragment, jsx as jsx8, jsxs as jsxs6 } from "react/jsx-runtime";
 var NavButton = (_a) => {
   var _b = _a, {
     application = "on-white",
@@ -435,11 +478,11 @@ var NavButton = (_a) => {
     "kind",
     "size"
   ]);
-  return /* @__PURE__ */ jsxs5(
+  return /* @__PURE__ */ jsxs6(
     "button",
     __spreadProps(__spreadValues({
       type: "button",
-      className: clsx5("group flex items-center transition-all duration-300", {
+      className: clsx6("group flex items-center transition-all duration-300", {
         "h-10 gap-[6px] pr-4 font-medium ": kind === "back-full",
         "text-gray-5 hover:text-gray-6": kind === "back-full" && application === "on-white",
         "text-white hover:text-gray-4 focus:text-gray-5": kind === "back-full" && application === "on-dark",
@@ -455,14 +498,14 @@ var NavButton = (_a) => {
       })
     }, rest), {
       children: [
-        kind === "back-full" && /* @__PURE__ */ jsxs5(Fragment, { children: [
-          /* @__PURE__ */ jsx7(Icon, { className: "icon-arrow-r rotate-180 text-gray-5 transition-all duration-300 group-hover:text-gray-6 text-[20px]" }),
+        kind === "back-full" && /* @__PURE__ */ jsxs6(Fragment, { children: [
+          /* @__PURE__ */ jsx8(Icon, { className: "icon-arrow-r rotate-180 text-gray-5 transition-all duration-300 group-hover:text-gray-6 text-[20px]" }),
           "Voltar"
         ] }),
-        kind === "back-arrow" && /* @__PURE__ */ jsx7(
+        kind === "back-arrow" && /* @__PURE__ */ jsx8(
           Icon,
           {
-            className: clsx5("rotate-180 icon-arrow-r", {
+            className: clsx6("rotate-180 icon-arrow-r", {
               "text-gray-5": application === "on-white",
               "text-gray-6": application === "on-dark",
               "text-[28px]": size === "md",
@@ -470,19 +513,19 @@ var NavButton = (_a) => {
             })
           }
         ),
-        kind === "back-single" && /* @__PURE__ */ jsx7(
+        kind === "back-single" && /* @__PURE__ */ jsx8(
           Icon,
           {
-            className: clsx5("icon-chev-l text-gray-5", {
+            className: clsx6("icon-chev-l text-gray-5", {
               "text-[28px]": size === "md",
               "text-[22.4px]": size === "sm"
             })
           }
         ),
-        kind === "close" && /* @__PURE__ */ jsx7(
+        kind === "close" && /* @__PURE__ */ jsx8(
           Icon,
           {
-            className: clsx5("icon-close-md text-gray-5", {
+            className: clsx6("icon-close-md text-gray-5", {
               "text-[28px]": size === "md",
               "text-[22.4px]": size === "sm"
             })
@@ -493,49 +536,83 @@ var NavButton = (_a) => {
   );
 };
 
+// src/components/base/StatusBadge.tsx
+import clsx7 from "clsx";
+import { jsx as jsx9, jsxs as jsxs7 } from "react/jsx-runtime";
+var StatusBadge = ({
+  variation = "neutral",
+  fullWidth = false,
+  title
+}) => {
+  return /* @__PURE__ */ jsxs7(
+    "div",
+    {
+      className: clsx7(
+        "flex items-center rounded-full border border-gray-2 bg-white px-4 py-[5.5px]",
+        fullWidth ? "w-full" : "w-fit"
+      ),
+      children: [
+        /* @__PURE__ */ jsx9(
+          "span",
+          {
+            className: clsx7(
+              "inline-flex h-2 w-2 rounded-full",
+              variation === "success" && "bg-brand-medium-2",
+              variation === "warning" && "bg-warning-pure",
+              variation === "danger" && "bg-danger-pure",
+              variation === "neutral" && "bg-gray-5"
+            )
+          }
+        ),
+        /* @__PURE__ */ jsx9("span", { className: "pl-2 font-work-sans text-body-3-regular text-gray-8", children: title })
+      ]
+    }
+  );
+};
+
 // src/components/base/StepperBar.tsx
 import { useState as useState2 } from "react";
-import clsx6 from "clsx";
-import { jsx as jsx8, jsxs as jsxs6 } from "react/jsx-runtime";
+import clsx8 from "clsx";
+import { jsx as jsx10, jsxs as jsxs8 } from "react/jsx-runtime";
 var StepperBar = ({
   steps,
   currentStep = 1
 }) => {
   const [currentStepBar, setCurrentStepBar] = useState2(currentStep);
-  return /* @__PURE__ */ jsx8("ul", { className: "flex items-center gap-3", children: steps.map((step, index) => /* @__PURE__ */ jsxs6(
+  return /* @__PURE__ */ jsx10("ul", { className: "flex items-center gap-3", children: steps.map((step, index) => /* @__PURE__ */ jsxs8(
     "li",
     {
-      className: clsx6("flex cursor-pointer items-center gap-3", {
+      className: clsx8("flex cursor-pointer items-center gap-3", {
         "text-brand-medium-2": currentStepBar > index + 1
       }),
       onClick: () => setCurrentStepBar(index + 1),
       children: [
-        /* @__PURE__ */ jsx8(
+        /* @__PURE__ */ jsx10(
           "span",
           {
-            className: clsx6(
+            className: clsx8(
               "flex h-6 w-6 items-center justify-center rounded-full border border-gray-5 font-work-sans text-body-2-semibold text-gray-5",
               {
                 "border-none bg-brand-pure": currentStepBar > index + 1,
                 "border !border-brand-medium-2 !text-brand-medium-2": currentStepBar === index + 1
               }
             ),
-            children: currentStepBar > index + 1 ? /* @__PURE__ */ jsx8(Icon, { className: "icon-check text-white text-[24px]" }) : index + 1
+            children: currentStepBar > index + 1 ? /* @__PURE__ */ jsx10(Icon, { className: "icon-check text-white text-[24px]" }) : index + 1
           }
         ),
-        /* @__PURE__ */ jsx8(
+        /* @__PURE__ */ jsx10(
           "span",
           {
-            className: clsx6("font-work-sans text-body-2-medium text-gray-5", {
+            className: clsx8("font-work-sans text-body-2-medium text-gray-5", {
               "!text-brand-medium-2": currentStepBar >= index + 1
             }),
             children: step.title
           }
         ),
-        index < steps.length - 1 && /* @__PURE__ */ jsx8(
+        index < steps.length - 1 && /* @__PURE__ */ jsx10(
           Icon,
           {
-            className: clsx6("icon-chev-r text-gray-5 text-[16px]", {
+            className: clsx8("icon-chev-r text-gray-5 text-[16px]", {
               "!text-brand-medium-2": currentStepBar > index + 1
             })
           }
@@ -547,9 +624,9 @@ var StepperBar = ({
 };
 
 // src/components/base/ToggleSwitch.tsx
-import clsx7 from "clsx";
+import clsx9 from "clsx";
 import { useState as useState3 } from "react";
-import { jsx as jsx9, jsxs as jsxs7 } from "react/jsx-runtime";
+import { jsx as jsx11, jsxs as jsxs9 } from "react/jsx-runtime";
 var ToggleSwitch = ({
   label,
   labelDir = "left",
@@ -557,30 +634,30 @@ var ToggleSwitch = ({
   disabled = false
 }) => {
   const [isOn, setIsOn] = useState3(false);
-  return /* @__PURE__ */ jsxs7(
+  return /* @__PURE__ */ jsxs9(
     "div",
     {
-      className: clsx7(
+      className: clsx9(
         "flex cursor-pointer items-center gap-3",
         labelDir === "left" && "justify-between"
       ),
       onClick: () => !disabled && setIsOn(!isOn),
       children: [
-        labelDir === "left" && /* @__PURE__ */ jsxs7("div", { children: [
-          /* @__PURE__ */ jsx9(
+        labelDir === "left" && /* @__PURE__ */ jsxs9("div", { children: [
+          /* @__PURE__ */ jsx11(
             "p",
             {
-              className: clsx7(
+              className: clsx9(
                 "text-body-2-regular",
                 !disabled ? "text-gray-8" : "text-gray-5"
               ),
               children: label
             }
           ),
-          description && /* @__PURE__ */ jsx9(
+          description && /* @__PURE__ */ jsx11(
             "p",
             {
-              className: clsx7(
+              className: clsx9(
                 "font-nunito-sans text-body-3-regular",
                 !disabled ? "text-gray-6" : "text-gray-5"
               ),
@@ -588,21 +665,21 @@ var ToggleSwitch = ({
             }
           )
         ] }),
-        /* @__PURE__ */ jsx9(
+        /* @__PURE__ */ jsx11(
           "div",
           {
-            className: clsx7(
+            className: clsx9(
               "flex h-6 w-[42px] cursor-pointer items-center rounded-full px-[3px] transition duration-300",
               isOn && "justify-end bg-brand-medium-2",
               !disabled ? "bg-gray-4" : "bg-gray-3"
             ),
-            children: /* @__PURE__ */ jsx9("div", { className: "h-[18px] w-[18px] rounded-full bg-white" })
+            children: /* @__PURE__ */ jsx11("div", { className: "h-[18px] w-[18px] rounded-full bg-white" })
           }
         ),
-        labelDir === "right" && /* @__PURE__ */ jsx9("div", { children: /* @__PURE__ */ jsx9(
+        labelDir === "right" && /* @__PURE__ */ jsx11("div", { children: /* @__PURE__ */ jsx11(
           "p",
           {
-            className: clsx7(
+            className: clsx9(
               "text-body-3-regular ",
               !disabled ? "text-gray-8" : "text-gray-5"
             ),
@@ -617,10 +694,12 @@ export {
   AtentionButton,
   AvatarProfile,
   Button,
+  Chip,
   Icon,
   IconButton,
   Loading,
   NavButton,
+  StatusBadge,
   StepperBar,
   ToggleSwitch
 };

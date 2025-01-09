@@ -25,6 +25,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLElement> {
 }
 declare const Button: React.FC<ButtonProps>;
 
+interface ChipProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    application?: 'on-white' | 'on-dark';
+    isSelected?: boolean;
+    isClosable?: boolean;
+    size?: 'sm' | 'md';
+    title: string;
+}
+declare const Chip: React.FC<ChipProps>;
+
 interface IconProps extends React.HTMLAttributes<HTMLElement> {
     className?: string;
 }
@@ -53,6 +62,13 @@ interface NavButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 declare const NavButton: React.FC<NavButtonProps>;
 
+interface StatusBadgeProps {
+    variation: 'success' | 'danger' | 'warning' | 'neutral';
+    fullWidth?: boolean;
+    title: string;
+}
+declare const StatusBadge: React.FC<StatusBadgeProps>;
+
 interface Step {
     title: string;
 }
@@ -70,4 +86,4 @@ interface ToggleSwitchProps {
 }
 declare const ToggleSwitch: React.FC<ToggleSwitchProps>;
 
-export { AtentionButton, AvatarProfile, Button, Icon, IconButton, Loading, NavButton, StepperBar, ToggleSwitch };
+export { AtentionButton, AvatarProfile, Button, Chip, Icon, IconButton, Loading, NavButton, StatusBadge, StepperBar, ToggleSwitch };
